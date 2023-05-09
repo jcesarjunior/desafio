@@ -1,7 +1,10 @@
 import express from 'express'
-import hbs from 'express-handlebars'
+import bodyParser from 'body-parser';
 
 const app = express()
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 import conn from './db/conn.js'
 
@@ -11,10 +14,15 @@ import RuralProducer from './models/RuralProducer.js'
 import Plantation from './models/Plantation.js'
 
 
+
+
 //Routes
 import userRoutes from './routes/userRoutes.js'
 
 
+
+
+app.use("/register", userRoutes);
 app.use("/", userRoutes);
 
 
