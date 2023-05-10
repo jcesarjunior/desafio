@@ -5,7 +5,7 @@ const router = express.Router()
 
 //controller
 
-router.get('/', UserController.showUsers)
+
 
 router.get('/users', UserController.showUsers)
 
@@ -18,5 +18,6 @@ router.post('/remove', UserController.removeUser)
 
 router.post('/register', UserController.registerPost)
 
+router.get('/', UserController.showUsers)
 
 export default router

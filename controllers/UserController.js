@@ -37,7 +37,7 @@ class UserController {
             email: req.body.email,
         }
 
-        User.update(user, { where: { id: id } })
+        await User.update(user, { where: { id: id } })
             .then(() => {
                 res.send('Atualizado com sucesso !')
             })
@@ -47,7 +47,7 @@ class UserController {
     //excluir um usuário específico
     static async removeUser(req, res) {
         const id = req.body.id
-        User.destroy({ where: { id: id } })
+        await User.destroy({ where: { id: id } })
             .then(() => {
                 res.send('Usuário removido com sucesso!')
             })
@@ -82,7 +82,7 @@ class UserController {
             pass: hashedPassword,
         }
 
-        User.create(user)
+        await User.create(user)
             .then((user) => {
                 res.send('Cadastro realizado com sucesso!')
             })

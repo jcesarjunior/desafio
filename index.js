@@ -18,12 +18,14 @@ import Plantation from './models/Plantation.js'
 
 //Routes
 import userRoutes from './routes/userRoutes.js'
+import ruralProducerRoutes from './routes/ruralProducerRoutes.js'
 
 
 
 
-app.use("/register", userRoutes);
-app.use("/", userRoutes);
+
+app.use('/', ruralProducerRoutes);
+app.use('/', userRoutes);
 
 
 
